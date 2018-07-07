@@ -1,13 +1,13 @@
 const express = require('express')
-var morgan = require('morgan')
- 
+// const loggerConfiguration =require('./logger');
+// const logger= loggerConfiguration.loggerob; 
+
+
+var fs = require('fs');
 
 const app = express()
 
-
-
 app.use(express.static(__dirname+"/content"));
-app.use(morgan('common'))
 
 var port = process.env.PORT || 5000;
 
@@ -22,9 +22,9 @@ app.get('/imagerec',(req,res)=>{
     res.send("development inprogress")
 })
 
-app.listen(port, (req,res)=>
-    console.log('Example app listening on port 3000!')
-)
+app.listen(port, (req,res)=>{
+    console.log('Example app listening on port 5000!');
+})
 
 
 
